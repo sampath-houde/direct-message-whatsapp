@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.codecat.directwhatsapp.MainActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:background="@color/backgroundColor"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    >
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="#008069"
+            android:layout_height="55dp">
+
+            <TextView
+                style="@style/TextAppearance.Material3.HeadlineMedium"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="14dp"
+                android:layout_gravity="center_vertical"
+                android:autoSizeTextType="uniform"
+                android:text="@string/app_name"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="?android:attr/colorControlNormal"
+            android:text="@string/app_description"
+            android:justificationMode="inter_word"
+            android:id="@+id/description" />
+
+        <LinearLayout
+            android:layout_marginHorizontal="16dp"
+            tools:ignore="useCompoundDrawables"
+            android:layout_marginTop="24dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TextAppearance.Material3.TitleSmall"
+                android:textColor="@color/primaryMain"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/phone_number"/>
+
+            <ImageView
+                android:contentDescription="@string/paste"
+                tools:visibility="visible"
+                android:visibility="gone"
+
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_fluent_clipboard_paste_20_regular"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:tint="@color/primaryMain"
+                android:id="@+id/paste"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:background="?attr/selectableItemBackground"
+
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:id="@+id/selectCountry">
+
+                <ImageView
+                    android:id="@+id/flag"
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/country_flag"
+                    android:src="@mipmap/in"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    style="@style/TextAppearance.Material3.BodyLarge"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/plus" />
+
+                <TextView
+                    app:drawableEndCompat="@drawable/ic_fluent_chevron_down_20_regular"
+                    android:drawablePadding="8dp"
+
+                    style="@style/TextAppearance.Material3.BodyLarge"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/isdCode"
+                    tools:text="91" />
+
+            </LinearLayout>
+
+
+            <EditText
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"
+                tools:text="@string/wa_number"
+
+                android:hint="@string/enter_number"
+                android:importantForAutofill="no"
+                android:id="@+id/waNumber"
+                android:inputType="phone"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/message"
+            style="@style/BodyHeader" />
+
+        <EditText
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_marginHorizontal="16dp"
+            tools:text="@string/wa_message"
+            android:gravity="bottom"
+
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:maxHeight="120dp"
+            android:minHeight="48dp"
+
+            android:hint="@string/enter_text"
+            android:inputType="text|textMultiLine"
+            android:scrollHorizontally="false"
+            android:importantForAutofill="no"
+            android:id="@+id/optionalMessage" />
+
+        <TextView
+            android:text="@string/format"
+            style="@style/BodyHeader" />
+
+        <TableLayout
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/formatContainer"
+            android:stretchColumns="*">
+
+            <TableRow>
+
+                <Button
+                    app:icon="@drawable/ic_fluent_text_bold_20_regular"
+                    style="@style/TextFormatButtons"
+                    android:textFontWeight="600"
+                    android:textStyle="bold"
+                    android:id="@+id/bold"
+                    android:text="@string/bold" />
+
+                <Button
+                    app:icon="@drawable/ic_fluent_text_italic_20_regular"
+                    android:layout_marginStart="12dp"
+                    style="@style/TextFormatButtons"
+                    android:textStyle="italic"
+                    android:id="@+id/italic"
+                    android:text="@string/italics" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="2dp">
+
+                <Button
+                    app:icon="@drawable/ic_fluent_text_strikethrough_20_regular"
+                    style="@style/TextFormatButtons"
+                    android:text="@string/strikethrough"
+                    android:id="@+id/strike" />
+
+                <Button
+                    app:icon="@drawable/ic_fluent_text_column_one_wide_20_regular"
+                    android:layout_marginStart="12dp"
+                    style="@style/TextFormatButtons"
+                    android:typeface="monospace"
+                    android:text="@string/monospace"
+                    android:id="@+id/mono" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_margin="16dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            app:strokeColor="?attr/colorPrimary"
+            android:textSize="16sp"
+
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/toggle_about"
+            android:text="@string/about" />
+
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical|end"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/sendButtons">
+
+
+            <com.google.android.material.button.MaterialButton
+                app:icon="@drawable/ic_fluent_send_20_regular"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="#325666"
+                android:layout_marginEnd="4dp"
+
+                android:text="@string/wa_business"
+                android:id="@+id/send_business"
+                style="@style/SendButtons" />
+
+            <com.google.android.material.button.MaterialButton
+                app:icon="@drawable/ic_fluent_send_20_regular"
+                android:backgroundTint="#008069"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="16dp"
+
+                android:text="@string/whatsapp"
+                style="@style/SendButtons"
+                android:id="@+id/send" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,26 @@
+<resources>
+
+    <style name="BaseTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="MainTheme" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryMain</item>
+        <item name="colorPrimaryVariant">@color/primaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondaryVariant">@color/accentDark</item>
+        <item name="colorSecondary">@color/accentSoft</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/backgroundColor</item>
+
+        <!--Light status bar during day-->
+        <item name="android:windowLightStatusBar">@bool/dayMode</item>
+    </style>
+</resources>

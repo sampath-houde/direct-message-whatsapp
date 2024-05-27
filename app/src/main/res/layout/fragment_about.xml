@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.codecat.directwhatsapp.FragmentAbout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:background="@color/bottomSheet"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingTop="8dp"
+    >
+
+    <TextView
+        style="@style/TextAppearance.Material3.HeadlineMedium"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+
+        android:textColor="?attr/colorPrimary"
+        android:autoSizeTextType="uniform"
+        android:text="@string/about"
+        android:maxLines="1"/>
+
+    <TextView
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+
+        android:justificationMode="inter_word"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/about_app"
+        android:id="@+id/about_app"
+        />
+
+    <TextView
+        style="@style/TextAppearance.Material3.HeadlineMedium"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+
+        android:textColor="?attr/colorPrimary"
+        android:text="@string/attributions"
+        />
+
+    <TextView
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:lineSpacingExtra="4dp"
+
+        android:justificationMode="inter_word"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/attributions_all"
+        android:id="@+id/attributions"
+        />
+
+    <Button
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:textSize="16sp"
+
+        android:text="@string/privacy_policy_title"
+        android:textColor="?attr/colorSecondary"
+        app:strokeColor="?attr/colorSecondary"
+
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:id="@+id/privacy"/>
+
+    <Button
+        android:backgroundTint="?attr/colorSecondary"
+        style="@style/Widget.Material3.Button"
+        android:textSize="16sp"
+
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/name"
+        android:id="@+id/more"/>
+
+</LinearLayout>
