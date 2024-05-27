@@ -23,7 +23,7 @@
             android:layout_height="55dp">
 
             <TextView
-                style="@style/TextAppearance.Material3.HeadlineMedium"
+                style="@style/TextAppearance.Material3.HeadlineSmall"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textColor="@color/white"

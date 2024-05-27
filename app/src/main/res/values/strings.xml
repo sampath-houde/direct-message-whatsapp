@@ -4,10 +4,10 @@
 
     <string name="privacy_policy_title">Privacy Policy</string>
 
-    <string name="about_app">Direct to Chat designed and developed by Mohammad Yasir. All rights reserved.\nThis application is not affiliated or associated with WhatsApp in any way.\nWhatsApp and the WhatsApp logo are trademarks of Whatsapp Inc.</string>
+    <string name="about_app">Direct Whatsapp designed and developed by Sampath Houde. All rights reserved.\nThis application is not affiliated or associated with WhatsApp in any way.\nWhatsApp and the WhatsApp logo are trademarks of Whatsapp Inc.</string>
     <string name="attributions_all">Flags of countries obtained from <a href="https://flagpedia.net" target="_blank">Flagpedia.net</a>\n<a href="https://github.com/microsoft/fluentui-system-icons">Fluent UI System Icons</a> by <a href="https://www.microsoft.com/design/fluent/">Microsoft</a>\n<a href="https://github.com/L4Digital/FastScroll">Fast Scroller</a> created by <a href="https://github.com/L4Digital">L4Digital</a></string>
     <string name="attributions">Attributions</string>
-    <string name="name">Mohammad Yasir</string>
+    <string name="name">Sampath Houde</string>
     <string name="about">About</string>
 
     <string name="enter_number_warn">Please enter a WhatsApp number first.</string>

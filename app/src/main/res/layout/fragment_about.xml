@@ -10,19 +10,28 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:paddingBottom="20dp"
-    android:paddingTop="8dp"
     >
 
-    <TextView
-        style="@style/TextAppearance.Material3.HeadlineMedium"
-        android:layout_marginHorizontal="16dp"
-        android:layout_height="wrap_content"
+    <LinearLayout
         android:layout_width="match_parent"
+        android:background="#008069"
+        android:layout_height="55dp">
 
-        android:textColor="?attr/colorPrimary"
-        android:autoSizeTextType="uniform"
-        android:text="@string/about"
-        android:maxLines="1"/>
+        <TextView
+            style="@style/TextAppearance.Material3.HeadlineMedium"
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:autoSizeTextType="uniform"
+            android:text="@string/about"
+            android:layout_gravity="center_vertical"
+            android:maxLines="1"/>
+
+
+    </LinearLayout>
+
+
 
     <TextView
         style="@style/TextAppearance.Material3.BodyLarge"
