@@ -1,4 +1,4 @@
-# Direct to Chat
+# Direct Whatsapp
 Direct to Chat is a minimal Android application that helps you send WhatsApp messages to unsaved contacts without needing to save their number to the phone book first. The app leverages official WhatsApp API to open the chat window of a particular number directly.
 
 Note that I was unable to find a way to include direct calling or video calling support using any official means. Any help in that regard would be much appreciated.
