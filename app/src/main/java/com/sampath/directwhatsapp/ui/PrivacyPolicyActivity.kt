@@ -1,4 +1,4 @@
-package com.codecat.directwhatsapp
+package com.sampath.directwhatsapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

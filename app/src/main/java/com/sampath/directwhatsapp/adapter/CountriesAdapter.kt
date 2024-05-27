@@ -1,14 +1,14 @@
-package com.sampath.directwhatsapp
+package com.sampath.directwhatsapp.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.codecat.directwhatsapp.Country
+import com.sampath.directwhatsapp.model.Country
 import com.codecat.directwhatsapp.countries
 import com.codecat.directwhatsapp.databinding.CountryListItemBinding
+import com.codecat.directwhatsapp.diffUtil
 
 
 /**Extends from [RecyclerView.Adapter] and is used to display a list of countries the user can select from.
@@ -17,15 +17,6 @@ import com.codecat.directwhatsapp.databinding.CountryListItemBinding
 class CountriesAdapter(private val clickListener: (String) -> Unit)
     : RecyclerView.Adapter<CountriesAdapter.CountryHolder>() {
 
-    private val diffUtil = object : DiffUtil.ItemCallback<Country>() {
-        override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {
-            return oldItem.isoCode == newItem.isoCode
-        }
-
-        override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean {
-            return oldItem == newItem
-        }
-    }
     private val asyncListDiffer = AsyncListDiffer(this, diffUtil)
 
     init {
@@ -44,7 +35,7 @@ class CountriesAdapter(private val clickListener: (String) -> Unit)
         holder.bind(asyncListDiffer.currentList[position])
     }
 
-    fun onFilter(list: List<Country>) {
+    open fun onFilter(list: List<Country>) {
         asyncListDiffer.submitList(list)
     }
 

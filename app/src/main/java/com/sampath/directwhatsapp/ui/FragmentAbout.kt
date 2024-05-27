@@ -1,4 +1,4 @@
-package com.codecat.directwhatsapp
+package com.sampath.directwhatsapp.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -7,6 +7,7 @@ import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.codecat.directwhatsapp.R
 import com.codecat.directwhatsapp.databinding.FragmentAboutBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 

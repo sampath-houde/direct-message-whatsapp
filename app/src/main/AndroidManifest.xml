@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/BaseTheme">
         <activity
-            android:name="com.codecat.directwhatsapp.PrivacyPolicyActivity"
+            android:name="com.codecat.directwhatsapp.com.sampath.directwhatsapp.ui.PrivacyPolicyActivity"
             android:theme="@style/MainTheme"/>
         <activity
-            android:name="com.codecat.directwhatsapp.CountrySelectorActivity"
+            android:name="com.codecat.directwhatsapp.com.sampath.directwhatsapp.ui.CountrySelectorActivity"
             android:theme="@style/MainTheme" />
         <activity
             android:name="com.codecat.directwhatsapp.MainActivity"

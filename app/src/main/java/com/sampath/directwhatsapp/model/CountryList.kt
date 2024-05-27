@@ -1,5 +1,7 @@
 package com.codecat.directwhatsapp
 
+import com.sampath.directwhatsapp.model.Country
+
 /**This file holds an instance of an [ArrayList] object which references all the countries pre defined in this project.
  * */
 var countries = listOf(

@@ -5,6 +5,9 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.annotation.StringRes
+import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.DiffUtil
+import com.sampath.directwhatsapp.model.Country
 import java.util.*
 
 //try to match the device's country code with a country code in our list.
@@ -18,6 +21,15 @@ private fun getDefaultCountry(): Country? {
     }
 
     return null
+}
+val diffUtil = object : DiffUtil.ItemCallback<Country>() {
+    override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {
+        return oldItem.isoCode == newItem.isoCode
+    }
+
+    override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean {
+        return oldItem == newItem
+    }
 }
 
 //this is used repeatedly. We might as well create a field for it.
@@ -54,4 +66,22 @@ fun getLaunchIntent(phoneNumber: String, message: String, business: Boolean): In
 fun Intent.launchIfResolved(context: Context) {
     if (resolveActivity(context.packageManager) == null) context.createToast(R.string.not_installed)
     else context.startActivity(this)
+}
+
+fun getTextQueryListener(createToast: (Int)-> Unit, adapter: (List<Country>) -> Unit) = object : SearchView.OnQueryTextListener {
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        return false
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        newText?.let {
+            val filteredList =
+                countries.filter { country -> country.name.contains(newText, true) }
+            if (filteredList.isEmpty())
+                createToast(R.string.no_data)
+            else
+                adapter(filteredList)
+        }
+        return false
+    }
 }

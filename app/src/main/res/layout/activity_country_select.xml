@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:context="com.codecat.directwhatsapp.CountrySelectorActivity"
+    tools:context="com.codecat.directwhatsapp.com.sampath.directwhatsapp.ui.CountrySelectorActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 

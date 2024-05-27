@@ -1,15 +1,16 @@
-package com.codecat.directwhatsapp
+package com.sampath.directwhatsapp.ui
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
-import androidx.recyclerview.widget.DiffUtil
+import com.codecat.directwhatsapp.countries
+import com.codecat.directwhatsapp.createToast
 import com.codecat.directwhatsapp.databinding.ActivityCountrySelectBinding
-import com.sampath.directwhatsapp.CountriesAdapter
+import com.codecat.directwhatsapp.deviceDefaultCountry
+import com.codecat.directwhatsapp.getTextQueryListener
+import com.sampath.directwhatsapp.adapter.CountriesAdapter
 
 /**This activity displays a list of countries to pick a country code form, and also shows the device default country at the top. */
 class CountrySelectorActivity : AppCompatActivity() {
@@ -36,23 +37,14 @@ class CountrySelectorActivity : AppCompatActivity() {
         //setting up the device default country.
         setupDeviceCountry()
 
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                newText?.let {
-                    val filteredList =
-                        countries.filter { country -> country.name.contains(newText, true) }
-                    if (filteredList.isEmpty())
-                        createToast(R.string.no_data)
-                    else
-                        adapter.onFilter(filteredList)
-                }
-                return false
-            }
-        })
+        binding.searchView.setOnQueryTextListener(
+            getTextQueryListener(
+                createToast = {
+                    createToast(it)
+            }, adapter = {
+                adapter.onFilter(it)
+            })
+        )
     }
 
     //when a country is selected by the user, its position is sent back to the main activity.

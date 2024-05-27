@@ -1,4 +1,4 @@
-package com.codecat.directwhatsapp
+package com.sampath.directwhatsapp.model
 
 /**A data class to hold data about countries.
  * @param name The country name

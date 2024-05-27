@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
-    tools:context="com.codecat.directwhatsapp.FragmentIsdDetected"
+    tools:context="com.codecat.directwhatsapp.com.sampath.directwhatsapp.ui.FragmentIsdDetected"
 
     android:background="@color/bottomSheet"
     android:layout_height="wrap_content"

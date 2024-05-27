@@ -1,12 +1,14 @@
-package com.codecat.directwhatsapp
+package com.sampath.directwhatsapp.ui
 
 import android.os.Bundle
 import android.telephony.PhoneNumberFormattingTextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.codecat.directwhatsapp.R
 import com.codecat.directwhatsapp.databinding.CountryListItemBinding
 import com.codecat.directwhatsapp.databinding.IsdDetectedAlertBinding
+import com.codecat.directwhatsapp.detectCountry
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 /**The [FragmentIsdDetected] fragment is shown when the user inputs a + sign in the phone number field in the [MainActivity].
