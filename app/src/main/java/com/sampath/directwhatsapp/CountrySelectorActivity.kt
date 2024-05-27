@@ -22,6 +22,8 @@ class CountrySelectorActivity : AppCompatActivity() {
         binding = ActivityCountrySelectBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backBtn.setOnClickListener { finish() }
+
         //setting up layout display
         binding.counter.text = countries.size.toString()
         binding.recycler.adapter = adapter

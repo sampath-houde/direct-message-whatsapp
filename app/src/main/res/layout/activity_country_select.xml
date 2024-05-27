@@ -15,8 +15,17 @@
         android:layout_width="match_parent"
         android:gravity="center_vertical"
         android:background="#008069"
+        android:paddingHorizontal="8dp"
         android:orientation="horizontal"
         android:id="@+id/headerLayout">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="24dp"
+            android:contentDescription="@string/back_button"
+            android:src="@drawable/back_btn"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_height="24dp"/>
 
         <TextView
             style="@style/TextAppearance.Material3.HeadlineSmall"
