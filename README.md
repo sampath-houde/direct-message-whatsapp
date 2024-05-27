@@ -16,13 +16,9 @@ The country code is necessary while providing the phone number. To help in this 
 This step is quite simple. Clone this repository and open the build.gradle file directly in Android Studio or the IDE of your choice.
 Once you build the project, you can install it onto any Android device running Android 9.0 Pie or above.
 
-## Screenshot
-[![Screenshot1](https://github.com/hafizmdyasir/WhatsAppDirect/blob/master/screenshots/Screenshot_20220622-125521_WhatsApp%20Direct.jpg)
-
 ## Attributions
 This application makes uses of the following sources:
 - Flags of all countries obtained via [Flagpedia.net](https://flagpedia.net)
 - [Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons) by Microsoft
-- [Fast Scroller](https://github.com/L4Digital/FastScroll) by L4Digital
 
 [^1]: Google Play and the Google Play logo are trademarks of Google LLC.
