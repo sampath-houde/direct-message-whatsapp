@@ -3,12 +3,17 @@ package com.codecat.directwhatsapp
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.DiffUtil
 import com.codecat.directwhatsapp.databinding.ActivityCountrySelectBinding
+import com.sampath.directwhatsapp.CountriesAdapter
 
 /**This activity displays a list of countries to pick a country code form, and also shows the device default country at the top. */
 class CountrySelectorActivity : AppCompatActivity() {
+
 
     //view binding
     private lateinit var binding: ActivityCountrySelectBinding
@@ -28,17 +33,31 @@ class CountrySelectorActivity : AppCompatActivity() {
         binding.counter.text = countries.size.toString()
         binding.recycler.adapter = adapter
 
-        binding.scroller.attachRecyclerView(binding.recycler)
-        binding.scroller.setSectionIndexer(adapter)
-
         //setting up the device default country.
         setupDeviceCountry()
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                newText?.let {
+                    val filteredList =
+                        countries.filter { country -> country.name.contains(newText, true) }
+                    if (filteredList.isEmpty())
+                        createToast(R.string.no_data)
+                    else
+                        adapter.onFilter(filteredList)
+                }
+                return false
+            }
+        })
     }
 
     //when a country is selected by the user, its position is sent back to the main activity.
-    private fun countrySelected(position: Int) {
-
-        setResult(Activity.RESULT_OK, Intent().apply { putExtra("country", position) })
+    private fun countrySelected(countryCode: String) {
+        setResult(Activity.RESULT_OK, Intent().apply { putExtra("country", countryCode) })
         finish()
     }
 
@@ -63,7 +82,9 @@ class CountrySelectorActivity : AppCompatActivity() {
         binding.deviceDefault.countryCode.text = dialingCode
         binding.deviceDefault.countryName.text = name
 
-        binding.deviceDefault.root.setOnClickListener { countrySelected(position = -1) }
+        binding.deviceDefault.root.setOnClickListener { countrySelected(countryCode = "IO") }
     }
+
+
 
 }

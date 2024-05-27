@@ -2,7 +2,7 @@ package com.codecat.directwhatsapp
 
 /**This file holds an instance of an [ArrayList] object which references all the countries pre defined in this project.
  * */
-val countries = arrayListOf(
+var countries = listOf(
     Country("Afghanistan","AF","93",R.mipmap.af),
     Country("Aland Islands","AX","358",R.mipmap.ax),
     Country("Albania","AL","355",R.mipmap.al),

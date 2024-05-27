@@ -27,6 +27,8 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_height="24dp"/>
 
+
+
         <TextView
             style="@style/TextAppearance.Material3.HeadlineSmall"
             android:layout_height="wrap_content"
@@ -64,9 +66,13 @@
     <include layout="@layout/country_list_item"
         android:id="@+id/device_default"/>
 
-    <TextView
-        style="@style/BodyHeader"
-        android:text="@string/all_countries" />
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        app:iconifiedByDefault="false"
+        android:layout_height="wrap_content"
+        app:defaultQueryHint="Search for country code"
+        android:gravity="end" />
 
     <FrameLayout
         android:layout_height="match_parent"
@@ -76,23 +82,9 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/country_list_item"
             tools:itemCount="2"
-
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:overScrollMode="never"
             android:id="@+id/recycler"/>
-
-        <com.l4digital.fastscroll.FastScroller
-            app:bubbleColor="?attr/colorSecondary"
-            app:handleColor="?attr/colorSecondary"
-            app:hideScrollbar="false"
-            app:bubbleTextSize="22sp"
-            app:bubbleSize="small"
-
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_gravity="end"
-            android:id="@+id/scroller"/>
 
     </FrameLayout>
 

@@ -17,11 +17,10 @@ class MainActivity: AppCompatActivity() {
 
         //the result code must be RESULT_OK. Otherwise, do nothing.
         if (it.resultCode != RESULT_OK || it.data == null) return@registerForActivityResult
-        val countryIndex = it.data?.getIntExtra("country", -1)
+        val countryCode = it.data?.getStringExtra("country")
 
-        //-1 corresponds to device default selected.
-        if (countryIndex == null || countryIndex == -1) countrySelected(deviceDefaultCountry)
-        else countrySelected(countries[countryIndex])
+        if (countryCode == null) countrySelected (deviceDefaultCountry)
+        else countrySelected(countries.filter { it.isoCode == countryCode}[0])
     }
 
     //selected country

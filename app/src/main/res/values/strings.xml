@@ -45,4 +45,6 @@
     <string name="wa_message">Optional message to include which spans more than a single line.</string>
     <string name="wa_number">1234567890</string>
     <string name="back_button">back button</string>
+
+    <string name="no_data">No Data Found</string>
 </resources>
